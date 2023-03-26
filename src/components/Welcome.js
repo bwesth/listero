@@ -1,5 +1,8 @@
+import WelcomeSpan1 from "./WelcomeSpan1"
+import WelcomeSpan2 from "./WelcomeSpan2"
+
 function Welcome() {
-    return <p>Velkommen til min React app! Med tiden bliver den totalt based</p>
+    return <p><WelcomeSpan1/> <WelcomeSpan2/></p>
 }
 
 export default Welcome
