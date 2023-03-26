@@ -1,11 +1,13 @@
-import './App.css';
+import "./App.css";
 
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from "./components/HelloWorld";
+import Welcome from "./components/Welcome";
 
 function App() {
   return (
     <div className="App">
       <HelloWorld />
+      <Welcome />
     </div>
   );
 }
