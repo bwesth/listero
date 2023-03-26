@@ -1,8 +1,15 @@
 function HelloWorld() {
 
-    const name = "Bjørn"
+    const name = "bJØRN"
 
-  return <h1>{`Hello, ${name}!`}</h1>;
+    function capitalize(string) {
+        const lowerCaseString = string.toLowerCase()
+        const firstLetterCapitalized = lowerCaseString.substr(0,1).toUpperCase()
+        const restOfString = lowerCaseString.substr(1, lowerCaseString.length)
+        return firstLetterCapitalized+restOfString
+    }
+
+  return <h1>{`Hello, ${capitalize(name)}!`}</h1>;
 }
 
 export default HelloWorld;
