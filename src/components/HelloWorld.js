@@ -1,6 +1,6 @@
 function HelloWorld() {
 
-    const name = "World"
+    const name = "Bjørn"
 
   return <h1>Hello, {name}!</h1>;
 }
