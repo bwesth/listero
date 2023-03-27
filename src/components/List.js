@@ -6,19 +6,11 @@ function List() {
         return <li>{item}</li>
     }
 
-    function renderList(list) {
-        let jsxList = []
-        for (let i = 0; i < list.length; i++) {
-            jsxList[i] = parseToListItem(list[i])
-        }
-        return jsxList
-    }
-
     return (
     <div>
       <h1>Min Liste</h1>
       <ul>
-        {renderList(list)}
+        {list.map(parseToListItem)}
       </ul>
     </div>
   );
