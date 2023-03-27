@@ -8,7 +8,7 @@ function List() {
     "brug conditional rendering",
     "brug propts",
   ]);
-  
+  const [input, setInput] = useState("")
 
   return (
     <div>
