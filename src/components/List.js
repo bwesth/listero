@@ -18,7 +18,7 @@ function List() {
     <div>
       <h1>Min Liste</h1>
       <ul>
-
+        {renderList(list)}
       </ul>
     </div>
   );
