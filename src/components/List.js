@@ -8,16 +8,18 @@ function List() {
     "brug conditional rendering",
     "brug propts",
   ]);
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState("");
 
   function handleChange(event) {
-    setInput(event.target.value)
+    setInput(event.target.value);
   }
 
   return (
     <div>
       <h1>Min Liste</h1>
-      <input type="text" value={input} onChange={handleChange}/>
+      <form>
+        <input type="text" value={input} onChange={handleChange} />
+      </form>
       {list.length > 0 ? (
         <ul>
           {list.map((item) => (
