@@ -1,27 +1,27 @@
 function List() {
-//   let list = [
-//     "Lav komponent",
-//     "brug states",
-//     "brug iterativ rendering",
-//     "brug conditional rendering",
-//     "brug propts",
-//   ];
+  //   let list = [
+  //     "Lav komponent",
+  //     "brug states",
+  //     "brug iterativ rendering",
+  //     "brug conditional rendering",
+  //     "brug propts",
+  //   ];
 
-  let list = [
-    
-  ];
+  let list = [];
 
   return (
-    list.length > 0 && (
-      <div>
-        <h1>Min Liste</h1>
+    <div>
+      <h1>Min Liste</h1>
+      {list.length > 0 ? (
         <ul>
           {list.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
-      </div>
-    )
+      ) : (
+        <p>Listen er tom</p>
+      )}
+    </div>
   );
 }
 
