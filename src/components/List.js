@@ -17,7 +17,7 @@ function List() {
   return (
     <div>
       <h1>Min Liste</h1>
-      <input type="text" value={input} />
+      <input type="text" value={input} onChange={handleChange}/>
       {list.length > 0 ? (
         <ul>
           {list.map((item) => (
