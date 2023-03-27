@@ -14,10 +14,16 @@ function List() {
     setInput(event.target.value);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    setList((prevState) => [...prevState, input]);
+    setInput("");
+  }
+
   return (
     <div>
       <h1>Min Liste</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="text" value={input} onChange={handleChange} />
       </form>
       {list.length > 0 ? (
