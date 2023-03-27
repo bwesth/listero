@@ -20,6 +20,10 @@ function List() {
     setInput("");
   }
 
+  function deleteItem(index) {
+    setList(prevState => prevState.filter( (item, itemIndex) => itemIndex !== index))
+  }
+
   return (
     <div>
       <h1>Min Liste</h1>
@@ -28,7 +32,7 @@ function List() {
       </form>
       {list.length > 0 ? (
         <ul>
-          {list.map((item) => (
+          {list.map((item, index) => (
             <li>{item}</li>
           ))}
         </ul>
