@@ -33,7 +33,7 @@ function List() {
       {list.length > 0 ? (
         <ul>
           {list.map((item, index) => (
-            <li>{item}</li>
+            <li>{item}<span onClick={() => deleteItem(index)}>🗑️</span></li>
           ))}
         </ul>
       ) : (
