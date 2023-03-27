@@ -2,11 +2,11 @@ import { useState } from "react";
 
 function List() {
   const [list, setList] = useState([
-    "Lav komponent",
-    "brug states",
-    "brug iterativ rendering",
-    "brug conditional rendering",
-    "brug propts",
+    { value: "Lav komponent", checked: false },
+    { value: "brug states", checked: false },
+    { value: "brug iterativ rendering", checked: false },
+    { value: "brug conditional rendering", checked: false },
+    { value: "brug props", checked: false },
   ]);
   const [input, setInput] = useState("");
 
@@ -21,7 +21,21 @@ function List() {
   }
 
   function deleteItem(index) {
-    setList(prevState => prevState.filter( (item, itemIndex) => itemIndex !== index))
+    setList((prevState) =>
+      prevState.filter((item, itemIndex) => itemIndex !== index)
+    );
+  }
+
+  function handleCheck(index) {
+    setList((prevState) => {
+      // Fordi vores array nu har objekter, kan vi ikke bare kopiere det med [...prevState]
+      // Vi bliver nødt til at lave et "deep copy", så det nye array ikke har de samme REFERENCER, men helt nye objekter.
+      let newList = JSON.parse(JSON.stringify(prevState));
+      // Vi inverterer checked boolean værdien i den givne position
+      newList[index].checked = !newList[index].checked;
+      // Og returnere det nye array til vores setList funktion.
+      return newList;
+    });
   }
 
   return (
@@ -33,7 +47,12 @@ function List() {
       {list.length > 0 ? (
         <ul>
           {list.map((item, index) => (
-            <li>{item}<span onClick={() => deleteItem(index)}>🗑️</span></li>
+            <li>
+              <span onClick={() => handleCheck(index)}>
+                {item.checked ? <s>{item.value}</s> : item.value}
+              </span>
+              <span onClick={() => deleteItem(index)}>🗑️</span>
+            </li>
           ))}
         </ul>
       ) : (
